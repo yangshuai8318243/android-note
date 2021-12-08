@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zh">CN</string>
+    <string name="en">EN</string>
+    <string name="zh_CN">CN</string>
+    <string name="zh_TW">CN</string>
+    <string name="id">ID</string>
+    <string name="ja">JP</string>
+    <string name="ko">KR</string>
+    <string name="ru">RU</string>
+    <string name="tr">TR</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zh">中国語</string>
+    <string name="zh_CN">中国語</string>
+    <string name="zh_TW">中国語</string>
+    <string name="en">英語</string>
+    <string name="tr">トルコ語</string>
+    <string name="ru">ロシア語</string>
+    <string name="ja">日本語</string>
+    <string name="ko">韓国語</string>
+    <string name="id">インドネシア語</string>
+</resources>

@@ -1,0 +1,3 @@
+include ':app'
+include ':android_base_module'
+rootProject.name = "My Application"

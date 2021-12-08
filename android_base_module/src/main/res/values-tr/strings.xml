@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zh">Çince</string>
+    <string name="zh_CN">Çince</string>
+    <string name="zh_TW">Çince</string>
+    <string name="en">İngilizce</string>
+    <string name="tr">Türkçe</string>
+    <string name="ru">Rusça</string>
+    <string name="ja">Japonca</string>
+    <string name="ko">Korece</string>
+    <string name="id">Endonezyaca</string>
+</resources>

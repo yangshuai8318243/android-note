@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zh">中文（简体）</string>
+    <string name="zh_CN">中文（简体）</string>
+    <string name="zh_TW">中文（繁体）</string>
+    <string name="en">英语</string>
+    <string name="id">印尼语</string>
+    <string name="ja">日语</string>
+    <string name="ko">韩语</string>
+    <string name="ru">俄语</string>
+    <string name="tr">土耳其语</string>
+    <string name="isShowLog">true</string>
+    <string name="log_tag">app_log</string>
+</resources>
