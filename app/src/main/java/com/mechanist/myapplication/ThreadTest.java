@@ -2,6 +2,8 @@ package com.mechanist.myapplication;
 
 import android.util.Log;
 
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -153,16 +155,14 @@ public class ThreadTest {
         join1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                while (index < max) {
-                    if (index % 2 == 0) {
-                        Log.i(TAG, Thread.currentThread().getName() + "===>" + index);
-                        index++;
-                        try {
-                            join2.start();
-                            join2.join();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                if (index % 2 == 0 && index < max) {
+                    Log.i(TAG, Thread.currentThread().getName() + "===>" + index);
+                    index++;
+                    try {
+                        join2.start();
+                        join2.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
             }
@@ -171,16 +171,14 @@ public class ThreadTest {
         join2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                while (index < max) {
-                    if (index % 2 != 0) {
-                        Log.i(TAG, Thread.currentThread().getName() + "===>" + index);
-                        index++;
-                        try {
-                            join1.start();
-                            join1.join();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                if (index % 2 != 0 && index < max) {
+                    Log.i(TAG, Thread.currentThread().getName() + "===>" + index);
+                    index++;
+                    try {
+                        join1.start();
+                        join1.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
             }
@@ -189,6 +187,46 @@ public class ThreadTest {
 
         join1.start();
         join2.start();
+    }
+
+
+    private ArrayBlockingQueue<Integer> blockingDeque = new ArrayBlockingQueue<Integer>(1);
+    private Thread add;
+    private Thread put;
+
+    public void print4_1Or2() {
+        add = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (index < 100) {
+                    Log.i(TAG, Thread.currentThread().getName() + "===>" + index);
+                    index++;
+                    try {
+                        blockingDeque.put(index);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        put = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (index < 100) {
+                    Log.i(TAG, Thread.currentThread().getName() + "===>" + index);
+                    index++;
+                    try {
+                        Integer peek = blockingDeque.take();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        add.start();
+        put.start();
+
     }
 
 

@@ -24,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                threadTest.print1_1Or2();
-                threadTest.print2_1Or2();
+//                threadTest.print2_1Or2();
 //                threadTest.print3_1Or2();
+                threadTest.print4_1Or2();
             }
         });
 //        PriorityQueue<String> data = new PriorityQueue<>();
